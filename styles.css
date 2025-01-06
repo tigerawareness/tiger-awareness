@@ -1,45 +1,75 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 20px;
     min-height: 100vh;
-    background-color: #fff;
+    background-color: #141516;
+    color: #F6F2E6;
+    font-family: 'Inter Tight', sans-serif;
     display: flex;
-    flex-direction: column; /* Stack header and main vertically */
+    position: relative;
+    flex-direction: column; 
+    font-weight: 200;
+}
+
+a {
+    color: #F1748E; 
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline; 
 }
 
 header {
-    position: fixed; /* Make the header fixed at the top */
-    top: 0; /* Align to the top of the viewport */
-    left: 0; /* Align to the left of the viewport */
-    width: 100%; /* Full width of the viewport */
-    background-color: #333; /* Dark background for contrast */
-    color: white; /* White text for readability */
-    padding: 20px 40px; /* Add some padding */
-    z-index: 1000; /* Ensure it's above all other content */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    background-color: #0B0B0C; 
+    color: #F6F2E6; 
+    padding: 20px 40px; 
+    z-index: 1000; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    text-align: center;
 }
 
 header h1 {
-    margin: 0; /* Remove margin from the header title */
-    font-size: 2.5em; /* Adjust font size */
+    margin: 0; 
+    font-size: 2.5em; 
 }
 
 header nav {
-    margin-top: 10px; /* Add space below the title */
+    margin-top: 10px; 
 }
 
 header nav a {
-    color: white; /* White text for links */
-    text-decoration: none; /* Remove underline */
-    margin-right: 15px; /* Space between links */
+    color: #FF8356; 
+    text-decoration: none; 
+    margin-right: 15px; 
 }
 
 header nav a:hover {
-    text-decoration: underline; /* Underline on hover */
+    text-decoration: underline; 
+}
+
+header nav a.active {
+    color: #F6F2E6; 
+    pointer-events: none;
+    cursor: default;
+    font-weight: 600;
+    text-decoration: underline;
 }
 
 main {
-    margin-top: 120px; /* Offset by header's height to avoid overlap */
+    margin-top: 120px; 
     width: 100%;
     display: flex;
     justify-content: center;
@@ -47,9 +77,13 @@ main {
     padding: 20px;
 }
 
+main.first {
+    margin-top: 800px;
+}
+
 .container {
-    width: 75vw;
-    max-width: 1600px;
+    width: 50vw;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 0px;
     box-sizing: border-box;
@@ -59,12 +93,163 @@ main {
 sup {
     font-size: 0.7em;
     vertical-align: super;
-    color: gray;
+    color: #a2a5aa;
 }
 sup a {
-    text-decoration: none; /* Remove underline */
-    color: gray; /* Subtle color */
+    text-decoration: none; 
+    color: #a2a5aa; 
 }
 sup a:hover {
-    text-decoration: underline; /* Underline on hover for clarity */
+    text-decoration: underline; 
+}
+
+h1 {
+    color: #F1748E;
+    font-weight: 400;
+    font-size: 3em;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+h2 {
+    color: #FF8356;
+    font-weight: 600;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+h3 {
+    color: #FFA582;
+    font-weight: 600;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+p {
+    text-indent: 20px;
+    text-align: justify;
+    
+}
+
+table {
+    border: 2px solid #F1748E;
+    border-collapse: collapse;
+    word-wrap: break-word;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #F6F2E6;
+    padding: 10px;
+}
+
+th {
+    background-color: #393B3E;
+    color: #F6F2E6;
+}
+
+.introtext {
+    text-align: center;
+    font-size: 2.5em;
+    font-weight: 200;
+    color: #CCC5B9;
+    font-style: italic;
+}
+
+.introtextbold {
+    text-align: center;
+    font-size: 2.5em;
+    font-weight: 600;
+    color: #CCC5B9;
+    font-style: italic;
+}
+
+.title {
+    text-align: center;
+    font-size: 3em;
+    font-weight: 100;
+    color: #CCC5B9;
+}
+
+.center-align {
+    text-align: center;
+}
+
+.center-align a {
+    display: inline-block;
+    text-align: center;
+}
+
+.banner {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 825px;
+    background-image: url('media/indexbanner.jpg');
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #F6F2E6;
+    z-index: 0;
+    padding: 0;
+    margin: 0;
+}
+
+.overlay {
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+ul, ol {
+    margin: 20px 0;
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+ul {
+    list-style-type: disc; 
+}
+
+ol {
+    list-style-type: decimal;
+}
+
+ul li {
+    margin-left: 20px;
+}
+
+ol li {
+    margin-left: 20px;
+}
+
+blockquote {
+    font-style: italic;
+    color: #CCC5B9;
+    border-left: 5px solid #F1748E;
+    padding-left: 20px;
+    margin: 20px 0;
+}
+
+#white {
+    color: #F6F2E6;
+}
+
+.image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  max-height: 400px;
+  object-fit: scale-down;
 }
